@@ -1,0 +1,10 @@
+#get users infomation
+Cyear = int("2023")
+U_age = int(input("How old are you?"))
+U_name = input("What is your name?").strip(" ").title()
+
+#the math
+et = Cyear + 100 - U_age
+
+#adress the user
+print(f"Hello {U_name} you will be 100 in the year {et} ")
