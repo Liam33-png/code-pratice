@@ -1,0 +1,7 @@
+def convert(a):
+   return a.replace(":)","pretend this is a smiley face emoji").replace(":(","pretend this is a sad face emoji")
+def main():
+    userinput = input("say something bro")
+    return print(convert(userinput))
+
+main()
