@@ -1,0 +1,6 @@
+def Einstein():
+    mass = int(input("whats the mass g? "))
+    E = mass * 300000000 * 300000000
+    return E
+#print his equation
+print(Einstein())
