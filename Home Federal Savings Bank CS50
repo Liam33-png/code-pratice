@@ -1,0 +1,9 @@
+promptuser = input("Greetings: ")
+promptuser = promptuser.strip()
+promptuser = promptuser.lower()
+if promptuser.startswith("hello"):
+    print("$0")
+elif promptuser.startswith("h"):
+    print("$20")
+else: 
+    print("$100")
