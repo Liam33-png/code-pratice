@@ -1,0 +1,19 @@
+promptuser = input("File name: ")
+promptuser = promptuser.strip()
+promptuser = promptuser.lower()
+if promptuser.endswith("gif"):
+    print("image/gif")
+elif promptuser.endswith("jpg"):
+    print("image/jpeg")
+elif promptuser.endswith("jpeg"):
+    print("image/jpeg")
+elif promptuser.endswith("png"):
+    print("image/png")
+elif promptuser.endswith("pdf"):
+    print("application/pdf")
+elif promptuser.endswith("txt"):
+    print("text/plain")
+elif promptuser.endswith("zip"):
+    print("application/zip")
+else:
+    print("application/octet-stream")
