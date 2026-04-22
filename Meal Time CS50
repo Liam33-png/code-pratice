@@ -1,0 +1,24 @@
+def main():
+    ask4time = input("whats the time? ")
+    if convert(ask4time) >= 7 and convert (ask4time) <=8:
+        print("Breakfast time")
+    elif convert(ask4time) >= 12 and convert(ask4time) <= 13:
+        print("Lunch time")
+    elif convert(ask4time) >= 18 and convert(ask4time) <= 19:
+        print("Dinner time")
+    else: 
+        pass
+
+
+
+
+def convert(time):
+    hours, (minutes) = time.split(":")
+    minutes_converted = int(minutes) / 60
+    return (float(hours) + float(minutes_converted))
+
+
+
+
+if __name__ == "__main__":
+    main()
