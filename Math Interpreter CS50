@@ -1,0 +1,4 @@
+promptuser = input("Equation? ")
+x, y, z = promptuser.split(" ")
+result = eval(f"{x} {y} {z}")
+print(result)
