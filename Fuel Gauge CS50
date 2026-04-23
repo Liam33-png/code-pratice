@@ -1,0 +1,20 @@
+while True:
+    try:
+        prompt_user = input("Fraction: ")
+        x, y = prompt_user.split("/")
+        if int(x) > int(y):
+            continue
+        percentage = f"{int(int(x) / int(y) * 100)}%"
+        hidden_percentage = int(x) / int(y) * 100
+        if hidden_percentage >= 99:
+            print("F")
+        elif hidden_percentage <= 1:
+            print("E")
+        else:
+            print(percentage)
+    except ValueError:
+        pass
+    except ZeroDivisionError:
+        pass
+    else:
+        break
