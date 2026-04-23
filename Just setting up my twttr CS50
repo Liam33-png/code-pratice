@@ -1,0 +1,6 @@
+Tweet = input("What are you gonna tweet: ")
+Vowels = ("a","A","e","E","i","I","o","O","u","U")
+for letter in Tweet:
+    if letter in Vowels:
+        Tweet = Tweet.replace(letter,"")
+print(Tweet)
