@@ -1,0 +1,18 @@
+amount_due = 50
+amount_paid = 0
+while amount_due > 0:
+    prompt_user = int(input("Insert coin:"))
+    if amount_due == 0:
+        print("Changed owed 0")
+    elif prompt_user == 5:
+        amount_paid = amount_paid + 5
+        amount_due = amount_due - 5
+    elif prompt_user == 10:
+        amount_paid = amount_paid + 10
+        amount_due = amount_due - 10
+    elif prompt_user == 25:
+        amount_paid = amount_paid + 25
+        amount_due = amount_due - 25 
+    if amount_due > 0:
+        print("Amount Owed:" + str(amount_due))
+print("Change owed:" + str(abs(min(amount_due, 0))))
