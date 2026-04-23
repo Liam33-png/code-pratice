@@ -1,0 +1,5 @@
+Camelcase = input("Say something in Camel case: ")
+for letter in Camelcase:
+    if letter.isupper():
+       Camelcase = Camelcase.replace(letter,"_" + letter.lower())
+print(Camelcase)
