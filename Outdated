@@ -1,0 +1,41 @@
+Months =[
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+conversion_on = True
+validator = False
+while conversion_on:
+    user_input = input("Date: ")
+    if "/" in user_input:
+        month, day, year = user_input.split("/")
+        if int(month) <= 12 and int(day) <= 31:
+            print(f"{year}-{int(month):02}-{int(day):02}")
+            conversion_on = False
+        else:
+            pass
+    
+    else:
+        month_day, year = user_input.split(", ")
+        month, day = month_day.split(" ")
+        day = day.strip(" ")
+        year = year.strip(" ")
+        month = month.strip(" ")
+        month = month.lower().title()
+        if month in Months and int(day) <= 31:
+            print(f"{year}-{(int(Months.index(month) + 1)):02}-{int(day):02}")
+            conversion_on = False
+        else:
+            pass
+
+
+
