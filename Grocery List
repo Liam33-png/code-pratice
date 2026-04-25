@@ -1,0 +1,19 @@
+shopping = True
+shopping_list = {
+
+}
+while shopping:
+    try:
+        user_input = input().strip().lower()
+        if user_input in shopping_list:
+            shopping_list[user_input] = shopping_list[user_input] + 1
+        else:
+            shopping_list[user_input] = 1
+    except EOFError:
+        shopping = False
+        for i, q in sorted(shopping_list.items()):
+            print(f"{q} {i.upper()}")
+
+
+    except KeyError:
+        shopping = False
