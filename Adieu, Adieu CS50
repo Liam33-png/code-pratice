@@ -1,13 +1,13 @@
 import inflect
 p = inflect.engine()
 reading = True
-Names = []
+names = []
 while reading:
     try:
         user_input = input("Name: ")
-        Names.append(user_input)
+        names.append(user_input)
         
     except EOFError:
-        break
-namez = p.join(Names)
-print(f"\nAdieu, adieu, to {namez}")
+        reading = False
+        namez = p.join(names)
+        print(f"\nAdieu, adieu, to {namez}")
