@@ -1,0 +1,52 @@
+import random
+def main():
+    counter = 0
+    level = get_level()
+    score = 0
+    attempts = 0
+    while counter < 10:
+        attempts = 0
+        x,y = generate_integer(level), generate_integer(level)
+        while attempts < 3:
+            answer = input(f"{x} + {y}: ")
+            if int(answer) ==  int(x) + int(y):
+                score += 1
+                counter += 1
+                break
+            else:
+                print("EEE")
+                attempts += 1
+                if attempts == 3:
+                    print(int(x) + int(y))
+                    counter += 1
+    else:
+        print(f"Score is {score}")
+
+
+def get_level():
+    getting = True
+    while getting:
+        try:
+            level = input("Level: ")
+            if int(level) == 3 or int(level) == 2 or int(level) == 1:
+                getting = False
+            else:
+                pass
+        except ValueError:
+            pass
+    return int(level)
+
+
+def generate_integer(level):
+    if level == 3:
+        random_int = random.randint(100,999)
+    elif level == 2:
+        random_int = random.randint(10,99)
+    elif level == 1:
+        random_int = random.randint(1,9)
+    else:
+        raise ValueError
+    return int(random_int)
+
+if __name__ == "__main__":
+    main()
