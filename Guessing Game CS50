@@ -1,0 +1,25 @@
+import random
+game_running = True
+while game_running:
+    try:
+        level = input("Level:")
+        if int(level) <= 0:
+            game_running = False
+        else:
+            number = random.randint(1,int(level))
+            guessing = True
+            while guessing:
+                guess = input("Guess:")
+                if int(guess) < number:
+                    print("Too small!")
+                    pass
+                elif int(guess) > number:
+                    print("Too big!")
+                else:
+                    print("Just right!")
+                    guessing = False
+                    game_running = False
+    except ValueError:
+        pass
+            
+    
