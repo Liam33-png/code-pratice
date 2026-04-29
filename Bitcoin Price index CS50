@@ -1,0 +1,14 @@
+import requests
+import sys
+try:
+   n = float(sys.argv[1])
+   bitcoin = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=e0f287a9a30b4e4dd3a223c863928e21ce4b5108929d8890dc1f9d01ba89a697")
+   bitcoin_price_usd = bitcoin.json()['data']['priceUsd']
+   current_cost = n * float(bitcoin_price_usd)
+   print(f"{current_cost:,.4f}")
+except ValueError:
+    print("Command-line argument is not a number")
+    sys.exit()
+except (requests.RequestException, IndexError):
+    print("Missing command-line argument")
+    sys.exit()
