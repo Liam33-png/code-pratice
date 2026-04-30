@@ -1,0 +1,16 @@
+def main():
+     tweet = input("What are you gonna tweet: ")
+     print(shorten(tweet))
+
+
+def shorten(word):
+    Vowels = ("a","A","e","E","i","I","o","O","u","U")
+    for letter in word:
+        if letter in Vowels:
+            word = word.replace(letter,"")
+    return str(word)
+        
+
+
+if __name__ == "__main__":
+    main()
