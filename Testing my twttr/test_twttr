@@ -1,0 +1,9 @@
+from twttr import shorten
+
+def test_default():
+    assert shorten("Myths") == "Myths"
+    assert shorten("Crypt") == "Crypt"
+    
+def test_word_with_vowel():
+    assert shorten("Twitter") == "Twttr"
+    assert shorten("Apple") == "ppl"
