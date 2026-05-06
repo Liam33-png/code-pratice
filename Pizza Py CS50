@@ -16,7 +16,7 @@ try:
         reader = csv.reader(file)
         for row in reader:
             menu.append(row)
-            print(tabulate(menu, tablefmt="grid"))
+print(tabulate(menu, tablefmt="grid"))
 except FileNotFoundError,FileExistsError:
     print("file doesnt exsist")
     sys.exit()
