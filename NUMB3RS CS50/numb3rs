@@ -1,0 +1,27 @@
+import re
+import sys
+
+
+def main():
+    print(validate(input("IPv4 Address: ")))
+
+
+def validate(ip):
+    if re.search(r"^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$", ip):
+        adress = re.search(r"^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$", ip)
+        number_set_one = adress.group(1)
+        number_set_two = adress.group(2)
+        number_set_three = adress.group(3)
+        number_set_four = adress.group(4)
+        if int(number_set_one) <= 255 and int(number_set_two) <= 255 and int(number_set_three) <= 255 and int(number_set_four) <= 255:
+            if re.search(r"^([1-9]{1}[0-9]*|[0]{1})$", number_set_one) and re.search(r"^([1-9]{1}[0-9]*|[0]{1})$", number_set_two) and re.search(r"^([1-9]{1}[0-9]*|[0]{1})$", number_set_three) and re.search(r"^([1-9]{1}[0-9]*|[0]{1})$", number_set_four):
+                return True
+            else:
+                return False
+        else:
+            return False
+    else: 
+        return False
+
+if __name__ == "__main__":
+    main()
