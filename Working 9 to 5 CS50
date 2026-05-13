@@ -1,0 +1,62 @@
+import re
+import sys
+
+
+def main():
+    print(convert(input("Hours: ")))
+
+
+def convert(s):
+    time = re.search(r"^([0-9][0-9]?(?::[0-9][0-9])?) (AM|PM) to ([0-9][0-9]?(?::[0-9][0-9])?) (AM|PM)", s)
+    if time :
+        time_one = time.group(1)
+        time_one_sign = time.group(2)
+        time_two = time.group(3)
+        time_two_sign = time.group(4)
+        if ":" in time_one:
+            hours, minutes = time_one.split(":")
+            minutes = minutes.lstrip("0") or 0
+            if int(minutes) >= 60:
+                raise ValueError
+            if int(hours) > 12:
+                raise ValueError
+            if time_one_sign == "PM":
+                hours = int(hours) + 12
+                minutes = minutes
+        else:
+            if int(time_one) > 12:
+                raise ValueError
+            if time_one_sign == "PM":
+                hours = int(time_one) + 12
+                minutes = 0
+            elif time_one_sign == "AM":
+                hours = time_one
+                minutes = 0
+        if ":" in time_two:
+            hourstwo, minutestwo = time_two.split(":")
+            minutestwo = minutestwo.lstrip("0") or 0
+            if int(minutestwo) >= 60:
+                raise ValueError
+            if int(hourstwo) > 12:
+                raise ValueError
+            if time_two_sign == "PM":
+                hourstwo = int(hourstwo) + 12
+                minutestwo = minutestwo
+        else:
+            if int(time_two) > 12:
+                raise ValueError
+            if time_two_sign == "PM":
+                hourstwo = int(time_two) + 12
+                minutestwo = 0
+            elif time_two_sign == "AM":
+                hourstwo = time_two
+                minutestwo = 0
+        return f"{int(hours):02}:{int(minutes):02} to {int(hourstwo):02}:{int(minutestwo):02}"
+    else:
+        raise ValueError
+            
+    
+       
+            
+if __name__ == "__main__":
+    main()
